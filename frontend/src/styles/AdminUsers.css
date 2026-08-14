@@ -1,0 +1,378 @@
+ 
+
+.admin-users {
+    width: 100%;
+}
+
+
+ 
+
+.admin-users-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.admin-users-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    color: #111827;
+}
+
+
+.admin-users-header p {
+    margin: 7px 0 0;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+ 
+
+.user-count {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 15px 22px;
+
+    min-width: 130px;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+.user-count span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+
+.user-count strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 25px;
+}
+
+
+ 
+
+.users-error {
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+
+ 
+
+.users-table-container {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    overflow-x: auto;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+ 
+
+.users-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+}
+
+
+.users-table thead {
+    background: #f9fafb;
+}
+
+
+.users-table th {
+    text-align: left;
+
+    padding: 16px 20px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.users-table td {
+    padding: 17px 20px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    color: #374151;
+
+    font-size: 14px;
+}
+
+
+.users-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+
+.users-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+.users-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+ 
+
+.user-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.user-avatar {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #e0e7ff;
+
+    color: #4338ca;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+.user-name strong {
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+ 
+
+.user-email {
+    color: #6b7280;
+}
+
+
+ 
+
+.role-badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+.role-admin {
+    background: #ede9fe;
+
+    color: #6d28d9;
+}
+
+
+.role-user {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+ 
+
+.delete-user-btn {
+    border: none;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    padding: 8px 14px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.delete-user-btn:hover {
+    background: #dc2626;
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+ 
+
+.users-loading {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 16px;
+}
+
+
+ 
+
+.no-users {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+.no-users-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+
+.no-users h2 {
+    margin: 0 0 8px;
+
+    color: #111827;
+
+    font-size: 22px;
+}
+
+
+.no-users p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+ 
+
+@media (max-width: 768px) {
+
+    .admin-users-header {
+        align-items: flex-start;
+
+        gap: 20px;
+
+        flex-direction: column;
+    }
+
+
+    .admin-users-header h1 {
+        font-size: 27px;
+    }
+
+
+    .user-count {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .users-table-container {
+        border-radius: 10px;
+    }
+
+}

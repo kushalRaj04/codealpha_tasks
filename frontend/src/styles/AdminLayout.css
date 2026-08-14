@@ -1,0 +1,461 @@
+ 
+
+.admin-layout {
+    min-height: 100vh;
+
+    display: flex;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+}
+
+
+ 
+
+.admin-sidebar {
+    width: 250px;
+
+    min-height: 100vh;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    border-right: 1px solid #1f2937;
+
+    box-shadow:
+        4px 0 20px rgba(0, 0, 0, 0.08);
+
+    z-index: 100;
+}
+
+
+ 
+
+.admin-logo {
+    padding: 28px 22px 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-logo h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+.admin-logo p {
+    margin: 6px 0 0;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    letter-spacing: 0.3px;
+}
+
+
+ 
+
+.admin-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 22px 14px;
+
+    flex: 1;
+}
+
+.admin-nav a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border-radius: 9px;
+
+    color: #d1d5db;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-nav a:hover {
+    background: #1f2937;
+
+    color: #ffffff;
+
+    transform: translateX(2px);
+}
+
+
+ 
+
+/*
+   React Router's Link doesn't automatically
+   get an active class.
+
+   If you later switch Link -> NavLink,
+   this rule will handle active links.
+*/
+
+.admin-nav a.active {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+
+ 
+
+.admin-bottom {
+    padding: 18px 14px 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ADMIN USER */
+
+.admin-bottom p {
+    margin: 0 10px 14px;
+
+    padding: 10px 12px;
+
+    background: #1f2937;
+
+    border-radius: 8px;
+
+    color: #e5e7eb;
+
+    font-size: 13px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* BACK TO STORE */
+
+.admin-bottom a {
+    display: block;
+
+    padding: 10px 12px;
+
+    margin-bottom: 7px;
+
+    border-radius: 8px;
+
+    color: #d1d5db;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.admin-bottom a:hover {
+    background: #1f2937;
+
+    color: #ffffff;
+}
+
+
+/* LOGOUT BUTTON */
+
+.admin-bottom button {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid #374151;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #fca5a5;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.admin-bottom button:hover {
+    background: #7f1d1d;
+
+    border-color: #991b1b;
+
+    color: #ffffff;
+}
+
+
+ 
+
+.admin-main {
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding: 35px 40px;
+
+    box-sizing: border-box;
+}
+
+
+ 
+
+.admin-main h1 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.5px;
+}
+
+.admin-main h2 {
+    color: #1f2937;
+}
+
+.admin-main p {
+    color: #6b7280;
+}
+
+
+ 
+
+.admin-main .card,
+.admin-main .admin-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+ 
+
+.admin-main button {
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.admin-main button:hover {
+    transform: translateY(-1px);
+}
+
+
+ 
+
+.admin-main table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.admin-main th {
+    padding: 14px 16px;
+
+    background: #f9fafb;
+
+    color: #4b5563;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-main td {
+    padding: 14px 16px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-main tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-main tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+ 
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: 210px;
+    }
+
+    .admin-main {
+        width: calc(100% - 210px);
+
+        margin-left: 210px;
+
+        padding: 28px 25px;
+    }
+
+}
+
+
+ 
+
+@media (max-width: 700px) {
+
+    .admin-sidebar {
+        position: relative;
+
+        width: 100%;
+
+        min-height: auto;
+    }
+
+    .admin-layout {
+        display: block;
+    }
+
+    .admin-main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 25px 18px;
+    }
+
+    .admin-nav {
+        padding: 15px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .admin-nav a {
+        justify-content: center;
+
+        text-align: center;
+
+        font-size: 13px;
+    }
+
+    .admin-bottom {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 8px;
+
+        padding: 15px;
+    }
+
+    .admin-bottom p {
+        grid-column: 1 / -1;
+
+        margin: 0;
+    }
+
+    .admin-bottom a,
+    .admin-bottom button {
+        margin: 0;
+    }
+
+}
+
+
+ 
+
+@media (max-width: 450px) {
+
+    .admin-logo {
+        padding: 22px 18px;
+    }
+
+    .admin-logo h2 {
+        font-size: 20px;
+    }
+
+    .admin-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-nav a {
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+    .admin-bottom {
+        grid-template-columns: 1fr;
+    }
+
+}
