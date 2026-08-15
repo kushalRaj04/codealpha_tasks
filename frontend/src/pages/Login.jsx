@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import "../styles/Auth.css";
 
 function Login() {
 
     const navigate = useNavigate();
-
     const { login } = useAuth();
 
     const [email, setEmail] = useState("");
@@ -16,13 +16,11 @@ function Login() {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-
         setError("");
 
         try {
 
             await login(email, password);
-
             navigate("/");
 
         } catch (error) {
@@ -34,43 +32,80 @@ function Login() {
         }
     };
 
-
     return (
-        <div>
+        <div className="auth-page">
 
-            <h1>Login</h1>
+            <div className="auth-card">
 
-            <form onSubmit={handleSubmit}>
+                <div className="auth-header">
+                    <h1>Welcome Back</h1>
 
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) =>
-                        setEmail(e.target.value)
-                    }
-                />
+                    <p>
+                        Login to continue shopping
+                    </p>
+                </div>
 
-                <br />
+                <form
+                    className="auth-form"
+                    onSubmit={handleSubmit}
+                >
 
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) =>
-                        setPassword(e.target.value)
-                    }
-                />
+                    <div className="auth-field">
+                        <label>Email</label>
 
-                <br />
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={(e) =>
+                                setEmail(e.target.value)
+                            }
+                            required
+                        />
+                    </div>
 
-                <button type="submit">
-                    Login
-                </button>
+                    <div className="auth-field">
+                        <label>Password</label>
 
-            </form>
+                        <input
+                            type="password"
+                            placeholder="Enter your password"
+                            value={password}
+                            onChange={(e) =>
+                                setPassword(e.target.value)
+                            }
+                            required
+                        />
+                    </div>
 
-            {error && <p>{error}</p>}
+                    {error && (
+                        <div className="auth-error">
+                            {error}
+                        </div>
+                    )}
+
+                    <button
+                        type="submit"
+                        className="auth-button"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+                <div className="auth-footer">
+
+                    <p>
+                        Don't have an account?
+                    </p>
+
+                    <Link to="/register">
+                        Create an account
+                    </Link>
+
+                </div>
+
+            </div>
 
         </div>
     );

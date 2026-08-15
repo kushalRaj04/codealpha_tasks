@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
+import "../styles/Auth.css";
 
 function Register() {
 
@@ -24,7 +25,6 @@ function Register() {
 
     };
 
-
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -41,7 +41,6 @@ function Register() {
 
             setMessage(response.data.message);
 
-            // Go to login after successful registration
             setTimeout(() => {
                 navigate("/login");
             }, 1000);
@@ -55,53 +54,105 @@ function Register() {
         }
     };
 
-
     return (
-        <div>
+        <div className="auth-page">
 
-            <h1>Register</h1>
+            <div className="auth-card">
 
-            <form onSubmit={handleSubmit}>
+                <div className="auth-header">
 
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
+                    <h1>Create Account</h1>
 
-                <br />
+                    <p>
+                        Join us and start shopping
+                    </p>
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
+                </div>
 
-                <br />
+                <form
+                    className="auth-form"
+                    onSubmit={handleSubmit}
+                >
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
+                    <div className="auth-field">
 
-                <br />
+                        <label>Name</label>
 
-                <button type="submit">
-                    Register
-                </button>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
 
-            </form>
+                    </div>
 
-            {message && <p>{message}</p>}
+                    <div className="auth-field">
 
-            {error && <p>{error}</p>}
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+
+                    </div>
+
+                    <div className="auth-field">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Create a password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+
+                    </div>
+
+                    {message && (
+                        <div className="auth-success">
+                            {message}
+                        </div>
+                    )}
+
+                    {error && (
+                        <div className="auth-error">
+                            {error}
+                        </div>
+                    )}
+
+                    <button
+                        type="submit"
+                        className="auth-button"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+                <div className="auth-footer">
+
+                    <p>
+                        Already have an account?
+                    </p>
+
+                    <Link to="/login">
+                        Login here
+                    </Link>
+
+                </div>
+
+            </div>
 
         </div>
     );
