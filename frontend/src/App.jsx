@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Products from "./pages/Products";
+import Products from "./pages/products";
 import ProductDetails from "./pages/ProductDetails";
 
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 
-import Orders from "./pages/Orders";
+import Orders from "./pages/orders";
 import OrderDetails from "./pages/OrderDetails";
 
 import Login from "./pages/Login";
