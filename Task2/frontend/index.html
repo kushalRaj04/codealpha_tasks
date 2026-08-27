@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Home - ConnectHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="navbar-inner">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-icon">
+                    C
+                </div>
+
+                <div class="brand-text">
+                    Connect<span>Hub</span>
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <div class="nav-links">
+
+                <a
+                    href="index.html"
+                    class="nav-item active"
+                >
+                    <span class="nav-icon">⌂</span>
+                    <span>Home</span>
+                </a>
+
+
+                <a
+                    href="create-post.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">＋</span>
+                    <span>Create</span>
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">◯</span>
+                    <span>Profile</span>
+                </a>
+
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+   
+    <main class="home-container">
+
+
+        <!-- FEED -->
+
+        <section class="feed-section">
+
+
+            <!-- Feed Header -->
+
+            <div class="feed-header">
+
+                <div>
+
+                    <h1>
+                        Home Feed
+                    </h1>
+
+                    <p>
+                        See what's happening in your community.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="create-post.html"
+                    class="header-create-btn"
+                >
+                    + Create Post
+                </a>
+
+            </div>
+
+
+            <!-- Posts -->
+
+            <section id="postsContainer">
+
+                <div class="loading">
+                    Loading posts...
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- Profile Card -->
+
+            <div class="sidebar-card profile-sidebar-card">
+
+                <img
+                    id="sidebarProfilePicture"
+                    src="https://i.pravatar.cc/150?img=12"
+                    alt="Profile Picture"
+                >
+
+
+                <h3 id="sidebarUsername">
+                    User
+                </h3>
+
+
+                <p>
+                    Welcome back to ConnectHub 👋
+                </p>
+
+
+                <a
+                    href="profile.html"
+                    class="view-profile-btn"
+                >
+                    View Profile
+                </a>
+
+            </div>
+
+
+            <!-- Suggested Users -->
+
+            <div class="sidebar-card">
+
+                <div class="sidebar-title">
+
+                    <h3>
+                        Suggested for you
+                    </h3>
+
+                </div>
+
+
+                <div class="suggested-user">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=5"
+                        alt="Rahul"
+                    >
+
+                    <div class="suggested-info">
+
+                        <strong>
+                            Rahul Sharma
+                        </strong>
+
+                        <span>
+                            @rahul
+                        </span>
+
+                    </div>
+
+                    <button>
+                        Follow
+                    </button>
+
+                </div>
+
+
+                <div class="suggested-user">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=9"
+                        alt="Ananya"
+                    >
+
+                    <div class="suggested-info">
+
+                        <strong>
+                            Ananya Rao
+                        </strong>
+
+                        <span>
+                            @ananya
+                        </span>
+
+                    </div>
+
+                    <button>
+                        Follow
+                    </button>
+
+                </div>
+
+
+                <div class="suggested-user">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="Arjun"
+                    >
+
+                    <div class="suggested-info">
+
+                        <strong>
+                            Arjun Kumar
+                        </strong>
+
+                        <span>
+                            @arjun
+                        </span>
+
+                    </div>
+
+                    <button>
+                        Follow
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+    </main>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/feed.js"></script>
+
+</body>
+
+</html>
