@@ -1,4 +1,4 @@
-const API_URL = "https://codealpha-task2-backend.onrender.com/";
+const API_URL = "https://codealpha-task2-backend.onrender.com/api";
 
 function getToken() {
     return localStorage.getItem("token");
