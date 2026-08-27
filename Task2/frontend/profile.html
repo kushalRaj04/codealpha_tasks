@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profile - ConnectHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="navbar-inner">
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-icon">
+                    C
+                </div>
+
+                <div class="brand-text">
+                    Connect<span>Hub</span>
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="nav-links">
+
+                <a
+                    href="index.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">⌂</span>
+                    <span>Home</span>
+                </a>
+
+
+                <a
+                    href="create-post.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">＋</span>
+                    <span>Create</span>
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="nav-item active"
+                >
+                    <span class="nav-icon">◯</span>
+                    <span>Profile</span>
+                </a>
+
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+ 
+
+    <main class="profile-container">
+
+
+        <!-- PROFILE HEADER -->
+
+        <section class="profile-header">
+
+            <!-- COVER PHOTO -->
+
+            <div class="cover-photo"></div>
+
+
+            <!-- PROFILE INFORMATION -->
+
+            <div class="profile-info">
+
+                <!-- PROFILE PICTURE -->
+
+                <img
+                    id="profilePicture"
+                    class="profile-picture"
+                    src="https://i.pravatar.cc/150"
+                    alt="Profile Picture"
+                >
+
+
+                <!-- DETAILS -->
+
+                <div class="profile-details">
+
+                    <h1 id="username">
+                        Loading...
+                    </h1>
+
+
+                    <p id="bio">
+                        Loading profile...
+                    </p>
+
+
+                    <!-- STATS -->
+
+                    <div class="profile-stats">
+
+                        <div class="stat">
+
+                            <strong id="postCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Posts
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong id="followersCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Followers
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong id="followingCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Following
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EDIT PROFILE -->
+
+                <button
+                    id="editProfileBtn"
+                    class="edit-profile-btn"
+                >
+                    Edit Profile
+                </button>
+
+
+                  <button
+        id="followBtn"
+        class="follow-btn"
+        style="display: none;"
+    >
+        Follow
+    </button>
+
+            </div>
+
+        </section>
+
+
+
+
+        <section
+            id="editProfileSection"
+            class="edit-profile-section"
+            style="display: none;"
+        >
+
+            <h2>
+                Edit Profile
+            </h2>
+
+
+            <form id="editProfileForm">
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="editUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editUsername"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BIO -->
+
+                <div class="form-group">
+
+                    <label for="editBio">
+                        Bio
+                    </label>
+
+                    <textarea
+                        id="editBio"
+                        rows="3"
+                        placeholder="Tell people about yourself..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- PROFILE PICTURE -->
+
+                <div class="form-group">
+
+                    <label for="editProfilePicture">
+                        Profile Picture URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="editProfilePicture"
+                        placeholder="https://example.com/profile.jpg"
+                    >
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="edit-actions">
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Save Changes
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancelEditBtn"
+                        class="cancel-btn"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+       
+
+        <section class="profile-posts">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Your Posts
+                </h2>
+
+            </div>
+
+
+            <div
+                id="profilePosts"
+                class="profile-post-grid"
+            >
+
+                <p class="loading">
+                    Loading posts...
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+     POST MODAL
+========================================= -->
+
+<div id="postModal" class="post-modal">
+
+    <div class="post-modal-content">
+
+        <button
+            id="closePostModal"
+            class="close-post-modal"
+        >
+            ✕
+        </button>
+
+        <div id="singlePostContainer">
+
+            <!-- Post will be loaded here -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+    <script src="js/api.js"></script>
+
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

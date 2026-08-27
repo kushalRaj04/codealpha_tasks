@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Post - ConnectHub</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="navbar-inner">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <div class="brand-icon">
+                C
+            </div>
+
+            <div class="brand-text">
+                Connect<span>Hub</span>
+            </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a
+                href="index.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+
+            <a
+                href="create-post.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">＋</span>
+                <span>Create</span>
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">◯</span>
+                <span>Profile</span>
+            </a>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<main class="home-container">
+
+    <section class="feed-section">
+
+        <div class="feed-header">
+
+            <div>
+
+                <h1>
+                    Post
+                </h1>
+
+                <p>
+                    View post and comments
+                </p>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="header-create-btn"
+            >
+                ← Back
+            </a>
+
+        </div>
+
+
+        <section id="singlePost">
+
+            <p>
+                Loading post...
+            </p>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<script src="js/api.js"></script>
+<script src="js/post.js"></script>
+
+</body>
+
+</html>
